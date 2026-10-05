@@ -10,7 +10,8 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
-       { text: 'MySQL', link: '/mysql/' }
+      { text: 'MySQL', link: '/mysql/' },
+      { text: '关于我', link: '/about' }
     ],
 
     sidebar: [

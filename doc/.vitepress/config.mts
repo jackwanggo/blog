@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: 'https://github.com/jackwanggo/blog',
   title: "个人博客",
   description: "个人博客记录",
   themeConfig: {

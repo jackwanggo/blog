@@ -2,24 +2,42 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-hero:
-  name: "个人博客"
-  text: "个人博客记录"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+---   
+<script setup>
+import { data as posts } from './posts.data.mjs'
+import { withBase } from 'vitepress'
+</script>
+<div class="post-list">
+  <div v-for="post in posts" :key="post.url" class="post">
+    <a :href="withBase(post.url)">
+      <h2>{{ post.title }}</h2>
+      <span v-if="post.date" class="date">{{ post.date }}</span>
+      <div class="summary">{{ post.description }}</div>
+    </a>
+  </div>
+</div>
 
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
 
+<style scoped>
+.post {
+  display: block;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: inherit;
+  text-decoration: none;
+}
+
+.post h2 {
+  margin: 0 0 8px;
+}
+
+.post p {
+  margin: 8px 0 0;
+  color: var(--vp-c-text-2);
+}
+
+.date {
+  font-size: 14px;
+  color: var(--vp-c-text-3);
+}
+</style>

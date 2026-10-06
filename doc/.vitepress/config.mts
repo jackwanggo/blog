@@ -8,26 +8,33 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-      { text: 'MySQL', link: '/mysql/' },
+      { text: '主页', link: '/' },
+      { text: '阅读笔记', link: '/readingNote/index' },
+      { text: '经济', link: '/economics/index' },
+      { text: '技术', link: '/tech/index' },
       { text: '关于我', link: '/about' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '阅读笔记',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '论持久战', link: '/readingNote/index' },
+          { text: '矛盾论', link: '/readingNote/api-examples' }
         ]
       },
       {
-        text: 'MySQL',
+        text: '经济',
         items: [
-          { text: '索引', link: '/mysql/index-design' },
-          { text: 'ICP', link: '/mysql/icp' },
-          { text: 'MVCC', link: '/mysql/mvcc' }
+          { text: '经济学十大原理', link: '/economics/markdown-examples' },
+          { text: '货币系数', link: '/economics/api-examples' }
+        ]
+      },
+      {
+        text: '技术',
+        items: [
+          { text: '索引', link: '/tech/index' },
+          { text: 'ICP', link: '/tech/icp' },
         ]
       },
     ],
